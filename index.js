@@ -15,11 +15,10 @@ function search(event) {
   let apiKey = "73f90ofbe4423241037fca0b58a62fdt";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-  //These 3 next coded lines, changes the time every time I search for a new city :)
-  let currentDateElement = document.querySelector("#current-date");
-  let currentDate = new Date();
+let currentDateELement = document.querySelector("#current-date");
+let currentDate = new Date();
 
-  currentDateElement.innerHTML = formatDate(currentDate);
+currentDateELement.innerHTML = formatDate(currentDate);
 
   axios.get(apiUrl).then(displayTemp);
 }
@@ -53,3 +52,4 @@ function formatDate(date) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
